@@ -6,22 +6,23 @@ int main(){
     cin >> t;
     
     while(t--){
-       int n;
-       cin >> n;
-       
-       int arr[n+1];
-       
-       for(int i=0;i<n;i++){
-           cin >> arr[i];
-       }
-       
-       sort(arr,arr+n);
-       
-       int i=0;
-       while(i<n && i>=arr[i]){
-           i++;
-       }
-       
-       cout << i << endl;
+        long long ans=-1;
+        
+        long long n,b;
+        cin >> n >> b;
+        
+        for(int i=0;i<n;i++){
+            long long w,h,p;
+            cin >> w >> h >> p;
+            
+            if(b>=p){
+                ans=max(ans,w*h);
+            }
+        }
+        
+        if(ans!=-1)
+        cout << ans << endl;
+        else
+        cout << "no tablet" << endl;
     }
 }
