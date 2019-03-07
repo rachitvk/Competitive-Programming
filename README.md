@@ -3,8 +3,6 @@ Leetcode etc. This is a repository consisting of my submitted solutions to the p
 
 Language used : C++
 
-Handles : 
-
-Codechef : @ciscodeewane
-Codeforces : @rachit_vk
+Codechef : @ciscodeewane || 
+Codeforces : @rachit_vk  ||
 Leetcode : boldmonk
