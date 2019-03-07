@@ -5,4 +5,4 @@ Language used : C++
 
 Codechef : @ciscodeewane || 
 Codeforces : @rachit_vk  ||
-Leetcode : boldmonk
+Leetcode : @boldmonk
