@@ -54,3 +54,4 @@ int main(){
    }
    
    cout << n-x << endl;
+}
