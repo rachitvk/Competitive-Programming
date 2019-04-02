@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int>adj[200010];
+int color[200010];
+bool flag=true;
+
+void dfs(int u, int c) {
+	color[u] = c;
+	for (int i=0;i<adj[u].size();i++) {
+	    int v = adj[u][i];
+		if (color[v] == -1) {
+			dfs(v, c ^ 1);
+		} else {
+			if (color[u] == color[v]) {
+				flag = false;
+			}
+		}
+	}
+}
+
+int main(){
+    int n,m;
+    cin >> n >> m;
+    
+    memset(color,-1,sizeof(color));
+    
+    int arr[m][2];
+    
+    for(int i=0;i<m;i++){
+        int u,v;
+        cin >> u >> v;
+        arr[i][0]=u;
+        arr[i][1]=v;
+        
+        adj[v].push_back(u);
+        adj[u].push_back(v);
+    }
+    
+    dfs(1,0);
+    
+    if(!flag){
+        cout << "NO" << endl;
+        return 0;
+    }
+    else{
+        cout << "YES" << endl;
+        for(int i=0;i<m;i++){
+            cout << (color[arr[i][0]] < color[arr[i][1]]);
+        }
+    }
+}

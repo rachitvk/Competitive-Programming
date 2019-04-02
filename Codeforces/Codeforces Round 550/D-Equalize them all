@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    
+    int x;
+    
+    int arr[n+1];
+    int hash[200010]={0};
+    int mx=0;
+    
+    for(int i=0;i<n;i++){
+       
+        int a;
+        cin >> a;
+
+        arr[i]=a;
+        hash[a]++;
+        
+        if(hash[a]>mx){
+            mx=hash[a];
+            x=a;
+        }
+    }
+    
+    cout << n-hash[x] << endl;
+    
+    int i=1;
+    int temp=0;
+    
+    
+    
+    while(i<n){
+        if(arr[i]==x){
+            temp=i;
+            int j=i;
+            while(j>=1 && (arr[j]!=x || (arr[j]==x && j==i))){
+                if(x>arr[j-1])
+                    cout << 1 << " " << j << " " << j+1 << endl;
+                else if(x<arr[j-1])
+                    cout << 2 << " " << j << " " << j+1 << endl;
+                j--;
+            }
+        }
+        i++;
+    }
+    
+    
+    while(temp<n-1){
+        if(x>arr[temp+1])
+            cout << 1 << " " << temp+2 << " " << temp+1 << endl;
+        else
+            cout << 2 << " " << temp+2 << " " << temp+1 << endl;
+        temp++;
+    }
+    
+}
